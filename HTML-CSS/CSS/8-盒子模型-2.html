@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        /* 清除内边距 */
+        margin: 0;
+        /* 清除外边距 */
+        padding: 0;
+    }
+
+    /* 行内元素为了照顾兼容性，尽量只设置左右内外边距，不要设置上下内外编边距。别卷了 */
+    /* 但是转换为块级和行内块元素就可以了 */
+
+    .hader {
+        /* 块级盒子水平居中对齐，条件：1、必须设置了宽度width  2、左右外边距设置为auto */
+        width: 900px;
+        height: 150px;
+        background-color: pink;
+        margin: 20px auto;
+        /* 行内元素和行内块元素水平居中：给它的父元素添加 text-align: center; 即可 */
+        text-align: center;
+    }
+
+    /* 嵌套元素垂直外边距塌陷 */
+    /* 对于两个嵌套关系（父子关系）的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距值 */
+    /* 有浮动、固定定位、绝对定位的盒子不会有塌陷问题，后面学了再说 */
+    .father {
+        width: 200px;
+        height: 200px;
+        background-color: purple;
+        margin-top: 50px;
+        /* 解决方法：1、给父元素定义上边框/上内边距 */
+        /*          2、给父元素添加 overflow: hidden; */
+        /* 1、1 一像素的透明边框 */
+        /* border: 1px solid transparent; */
+        /* 1、2 一像素的上内边距 */
+        /* padding: 1px; */
+        overflow: hidden;
+    }
+
+    .son {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin-top: 50px;
+    }
+</style>
+
+<body>
+    嵌套元素垂直外边距塌陷
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <ul>
+        <li>第1个</li>
+        <li>第2个</li>
+        <li>第3个</li>
+    </ul>
+
+    <div class="hader">
+        <span>块级盒子水平居中对齐，条件：1、必须设置了宽度width 2、左右外边距设置为auto</span>
+    </div>
+    <div class="hader">
+        <img src="images/icon.png" alt="图片加载失败">
+    </div>
+</body>
+
+</html>

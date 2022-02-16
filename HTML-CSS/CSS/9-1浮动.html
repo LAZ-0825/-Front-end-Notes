@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    div {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .box1 {
+        width: 400px;
+        height: 400px;
+        background-color: antiquewhite;
+    }
+
+    .left,
+    .right {
+        width: 60px;
+        height: 60px;
+        background-color: pink;
+        float: left;
+    }
+
+    .right {
+        float: right;
+    }
+
+    .box2 {
+        width: 1226px;
+        height: 285px;
+        background-color: pink;
+        margin: 0 auto;
+    }
+
+    .box2 li {
+        width: 296px;
+        height: 285px;
+        background-color: skyblue;
+        float: left;
+        margin-right: 14px;
+    }
+
+    .box2 .last {
+        /* 这里如果写 .last 的话，由于选择器权重较低将不会起作用 */
+        margin-right: 0;
+    }
+</style>
+
+<body>
+    <div class="box1">
+        <div class="left" style="background-color: pink;">青龙大人</div>
+        <div class="left" style="background-color: purple;">白虎大人</div>
+        <div class="right" style="background-color: red;">朱雀大人</div>
+        <div class="left" style="background-color: yellow;">玄武大人</div>
+        <div>普通盒子，没浮动</div>
+    </div>
+    <ul class="box2">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+    </ul>
+</body>
+
+</html>

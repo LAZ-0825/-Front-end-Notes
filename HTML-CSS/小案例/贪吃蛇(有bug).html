@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>贪食蛇</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+ 
+        td {
+            border: 1px solid #1a1a1a;
+            width: 48px;
+            height: 48px;
+        }
+ 
+        #Map {
+            background-color: pink;
+            opacity: 0.5;
+            z-index: 1;
+            width: 500px;
+            height: 500px;
+            position: absolute;
+        }
+ 
+        div {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+        }
+    span{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        /*left: ;*/
+    }
+ 
+    </style>
+ 
+</head>
+<body>
+ 
+<span id="ss"><h3>Score:0</h3></span>
+ 
+<span>
+<button onclick="changeTime('100')">快</button>
+<button onclick="changeTime('250')">中</button>
+<button onclick="changeTime('500')">慢</button>
+</span>
+ 
+<div id="Map"></div>
+ 
+ 
+<script>
+    //第一步 - 创建地图
+    document.write("<table cellspacing='0'>");
+    for (var n = 0; n < 10; n++) {
+        document.write("<tr>");
+        for (var i = 0; i < 10; i++) {
+            document.write("<td></td>");
+        }
+        document.write("</tr>");
+    }
+    document.write("</table>");
+    //第二步 -
+    //1)获得地图
+    var Map = document.getElementById("Map");
+    //2)创建所有块的类
+    function createNode(type) {
+        var div = document.createElement("div");
+        div.style.left = parseInt(Math.random() * 10) * 50 + "px";
+        div.style.top = parseInt(Math.random() * 10) * 50 + "px";
+        Map.appendChild(div);
+        switch (type) {
+            case 1://1蛇头
+                div.style.background = "red";
+                break;
+            case 2://2食物
+                div.style.background = "blue";
+                break;
+            case 3://3身体
+                div.style.background = "yellow";
+                break;
+        }
+        return div;
+    }
+    //3)初始化一些变量，便于以后调用
+    var score = 0;//全局变量 计分
+    var span = document.getElementById("ss");
+    var allNode = new Array();//用来保存所有的食物和身体
+    var headNode = createNode(1);//创建蛇头
+    var foodNode = createNode(2);//创建食物
+    headNode.value = 37; //  37左  38上  39右  40下
+    //防止食物和蛇头和身体重叠
+    var everyNode = [];
+    everyNode.push(headNode);
+    //第三部 - 启动定时器
+    function update() {
+ 
+        //出界
+        if (parseInt(headNode.style.left) >= 500 || parseInt(headNode.style.left) < 0 ||
+                parseInt(headNode.style.top) >= 500 || parseInt(headNode.style.top) < 0) {
+            alert("GAME OVER");
+            clearInterval(t)
+        }
+ 
+        //3)移动身体
+        if (allNode.length > 0) {
+            for (var n = allNode.length - 1; n >= 0; n--) {
+                //伤害到自己
+                if (headNode.style.left == allNode[n].style.left &&
+                        headNode.style.top == allNode[n].style.top) {
+                    alert("咬到尾巴了");
+                clearInterval(t)
+                }
+ 
+                switch (allNode[n].value) {
+                    case 37:
+                        allNode[n].style.left = parseInt(allNode[n].style.left) - 50 + "px";
+                        break;
+                    case 38:
+                        allNode[n].style.top = parseInt(allNode[n].style.top) - 50 + "px";
+                        break;
+                    case 39:
+                        allNode[n].style.left = parseInt(allNode[n].style.left) + 50 + "px";
+                        break;
+                    case 40:
+                        allNode[n].style.top = parseInt(allNode[n].style.top) + 50 + "px";
+                        break;
+                }
+                if (n == 0) {
+                    allNode[n].value = headNode.value;
+                } else {
+                    allNode[n].value = allNode[n - 1].value;
+                }
+            }
+        }
+ 
+        //1） 移动蛇头
+        switch (headNode.value) {
+            case 37:
+                headNode.style.left = parseInt(headNode.style.left) - 50 + "px";
+                break;
+            case 38:
+                headNode.style.top = parseInt(headNode.style.top) - 50 + "px";
+                break;
+            case 39:
+                headNode.style.left = parseInt(headNode.style.left) + 50 + "px";
+                break;
+            case 40:
+                headNode.style.top = parseInt(headNode.style.top) + 50 + "px";
+                break;
+        }
+ 
+        //2) 碰撞检测
+        if (foodNode.style.left == headNode.style.left &&
+                foodNode.style.top == headNode.style.top) {
+            score+=10;
+            span.innerHTML = "<h3>Score:"+score+"</h3>";
+            //创建新身体
+            var newBody = createNode(3);
+            //找到最后一块（尾部）
+            var lastBody = null;
+            if (allNode.length == 0) {
+                lastBody = headNode;
+            } else {
+                lastBody = allNode[allNode.length - 1];
+            }
+            //新的身体和最后一块保持一致
+            newBody.value = lastBody.value;
+            //初始化 新块的位置
+            switch (newBody.value) {
+                case 37:
+                    newBody.style.left = parseInt(lastBody.style.left) + 50 + "px";
+                    newBody.style.top = lastBody.style.top;
+                    break;
+                case 38:
+                    newBody.style.top = parseInt(lastBody.style.top) + 50 + "px";
+                    newBody.style.left = lastBody.style.left;
+                    break;
+                case 39:
+                    newBody.style.left = parseInt(lastBody.style.left) - 50 + "px";
+                    newBody.style.top = lastBody.style.top;
+                    break;
+                case 40:
+                    newBody.style.top = parseInt(lastBody.style.top) - 50 + "px";
+                    newBody.style.left = lastBody.style.left;
+                    break;
+            }
+            //添加到数组，统一处理，一起移动
+            allNode.push(newBody);
+            everyNode.push(newBody);
+ 
+            //刷新食物
+            var px = 0;
+            var py = 0;
+            var fbool = true;
+            var num = 0;
+            while (fbool) {
+                px = parseInt(Math.random() * 10) * 50 + "px";
+                py = parseInt(Math.random() * 10) * 50 + "px";
+                for (var n = 0; n < everyNode.length; n++) {
+                    if (everyNode[n].style.left == px && everyNode[n].style.top == py) {
+                        num++;
+                    }
+                }
+                if (num == 0) {
+                    break;
+                } else {
+                    num = 0;
+                }
+            }
+ 
+            foodNode.style.left = px;
+            foodNode.style.top = py;
+ 
+        }
+ 
+ 
+    }
+    function changeTime(speed) {
+        t=setInterval(update, speed);
+    }
+    //第四部 - 控制蛇头移动
+    document.onkeydown = function () {
+        switch (event.keyCode) {
+            case 37:
+                if (headNode.value != 39 || allNode.length == 0) {
+                    headNode.value = 37;
+                }
+                break;
+            case 38:
+                if (headNode.value != 40 || allNode.length == 0) {
+                    headNode.value = 38;
+                }
+                break;
+            case 39:
+                if (headNode.value != 37 || allNode.length == 0) {
+                    headNode.value = 39;
+                }
+                break;
+            case 40:
+                if (headNode.value != 38 || allNode.length == 0) {
+                    headNode.value = 40;
+                }
+                break;
+ 
+        }
+    }
+ 
+</script>
+ 
+ 
+</body>
+</html>

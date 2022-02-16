@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 当父元素没有指定高度并且孩子也全部浮动时，父元素的高度将变成0，影响后面的元素排列 */
+    /* 所以我们要进行消除浮动 */
+    /* 清除浮动的四种方法： */
+    /* 1、额外标签法   2、父级添加 overflow 属性   3、父级添加 after 伪元素   4、父级添加双伪元素 */
+
+    /* 3、父级添加 after 伪元素，相当于额外标签法的升级版 */
+    /* .clearfix:after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+    }
+
+    .clearfix {
+        *zoom: 1;
+    } */
+
+
+    /* 4、父级添加双伪元素 */
+    .clearfix:before,
+    .clearfix:after {
+        content: "";
+        display: table;
+    }
+
+    .clearfix:after {
+        clear: both;
+    }
+
+    .clearfix {
+        *zoom: 1;
+    }
+
+
+
+    .box {
+        width: 800px;
+        border: 2px solid darkblue;
+        margin: 0 auto;
+        /* 2、父级添加 overflow 属性，一般选择hidden。代码简洁，但无法显示溢出部分 */
+        /* overflow: hidden; */
+    }
+
+    .damao {
+        float: left;
+        width: 300px;
+        height: 200px;
+        background-color: purple;
+    }
+
+    .ermao {
+        float: left;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+
+    .flooter {
+        height: 200px;
+        background-color: black;
+    }
+
+    /* 1、 额外标签法（隔墙法） 通俗易懂 但 需要添加额外标签*/
+    /* .clear {
+        clear: both;
+    } */
+</style>
+
+<body>
+
+
+    <!-- 3、父级添加 after 伪元素  4、父级添加双伪元素 -->
+    <div class="box clearfix">
+
+        <!-- <div class="box"> -->
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+
+        <!-- 1、额外标签法 -->
+        <!-- 新增的盒子要求必须是块级元素们不能是行内元素（ <br> 也行） -->
+        <!-- <div class="clear"></div> -->
+    </div>
+    <div class="flooter"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        /* blur是一个函数小括号里面数值越大，图片越模糊注意数值要加px单位*/
+        filter: blur(5px);
+    }
+
+    img:hover {
+        filter: blur(0px);
+    }
+
+    .father {
+        width: 300px;
+        height: 200px;
+        background-color: pink;
+    }
+
+    .son {
+        width: calc(100% - 30px);
+        height: 30px;
+        background-color: skyblue;
+    }
+</style>
+
+<body>
+    <img src="images/pink.jpg" alt="">
+
+    <!-- 要求子盒子永远比父盒子窄30px -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>

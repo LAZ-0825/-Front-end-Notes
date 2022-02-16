@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 精灵图的使用 */
+    .box1 {
+        width: 60px;
+        height: 60px;
+
+        /* background: url(images/sprites.png) no-repeat ; */
+        /* background-position: -180px 0; */
+        /* 简写如下： */
+        background: url(images/sprites.png) no-repeat -180px 0;
+    }
+
+    .box2 {
+        width: 27px;
+        height: 25px;
+        background: url(images/sprites.png) no-repeat -155px -106px;
+    }
+
+    /* 字体图标 */
+    /* 下载字体 -> 素材放入根目录 -> CSS代码导入字体 -> 使用时指定字体并讲字体对应的小方框复制到想要的地方即可 */
+    /* 具体的懒得写了，用的时候看视频叭（懒 */
+</style>
+
+<body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

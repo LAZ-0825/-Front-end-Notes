@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+<!--    css写这里-->
+    <style>
+
+        /*css字体属性*/
+        /*一般直接给body设置字体*/
+        /* 标题文字特殊，需要直接设置字体大小等 */
+        h2 {
+            font-family: "宋体";
+            font-size: 30px;
+        }
+
+        p {
+            /* font-family: 微软雅黑; */
+            /*微软雅黑英文名*/
+            font-family: Microft YaHei;
+            font-size: 20px;
+            /* 倾斜字体 */
+            font-style: italic;
+        }
+
+        /*实际开发中更喜欢用数字（400 == 不加粗）*/
+        .bold {
+            /*相当于 font-weight: 700;*/
+            font-weight: bold;
+        }
+        .bold1 {
+            font-weight: 800;
+        }
+        .bold2 {
+            font-weight: 900;
+        }
+
+        /* CSS文字样式 */
+        /* p的倾斜看上方的p选择器，里面有写 */
+        /* 让倾斜的字不倾斜，赶紧脉动回来 */
+        em {
+            font-style: normal;
+        }
+
+        /* font符合属性的书写格式 */
+        div {
+            /* font-style: italic;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: 'Microsoft yahei'; */
+            /* 复合属性：简写的方式(注意书写顺序，行高line-height可以省略) */
+            /* font: font-style font-weight font-size/line-height font-family */
+            /* 不需要的属性可以省略，但必须保留font-size和font-family这两个属性 */
+            font: italic 700 16px/20px 'Microsoft yahei'
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h2>标题</h2>
+    <p>正文1</p>
+    <p class="bold">正文2 bold -> 700</p>
+    <p class="bold1">正文3 -> 800</p>
+    <p class="bold2">正文4 -> 900</p>
+
+    <p>倾斜的p</p>
+    <em>不倾斜的《em》倾斜标签字体</em>
+
+    <div>复合属性的使用</div>
+    <div>复合属性的使用2</div>
+
+</body>
+</html>

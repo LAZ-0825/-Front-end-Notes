@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<h1>列表</h1>
+<h2>无序列表</h2>
+<img src = 'https://i.bmp.ovh/imgs/2021/09/9bb5b991434ba9b4.png' width="800" /> <br \>
+1.无序列表的各个列表项之间没有顺序级别之分，是并列的 <br \>
+2.ul 中只能嵌套li ，直接在 ul 里面输入其他标签或文字的做法是不被允许的 <br \>
+3.li 与 li 之间相当于一个容器，可以容纳所有元素（例如段落标签 p 和文字） <br \>
+4.无序列表会带有自己的样式属性，但在实际使用时，我们会用css来设置。 <br \>
+
+<h2>栋栋喜欢吃什么？</h2>
+<ul>
+  <li>榴莲</li>
+  <li>臭豆腐</li>
+  <li>鲱鱼罐头</li>
+  <li>奥里给（×</li>
+</ul>
+
+<h2>有序列表</h2>
+<img src = 'https://i.bmp.ovh/imgs/2021/09/bc275cdbe8c988cf.png' width="800" /> <br \>
+
+1.ol 中只能嵌套li ，直接在 ol 里面输入其他标签或文字的做法是不被允许的 <br \>
+2.li 与 li 之间相当于一个容器，可以容纳所有元素（例如段落标签 p 和文字） <br \>
+3.有序列表会带有自己的样式属性，但在实际使用时，我们会用css来设置。 <br \>
+
+<h2>栋栋粉丝排行榜</h2>
+<ol>
+  <li>男桐栋栋 1 号 : 3000</li>
+  <li>男桐栋栋 2 号 : 2000</li>
+  <li>男桐栋栋 3 号 : 1000</li>
+</ol>
+
+<h2>自定义列表</h2>
+自定义列表使用场景：<br \>
+自定义列表常用于对术语或名词进行解释和描述，定义列表的列表项前没有任何项目符号。 <br \>
+<img src = 'https://i.bmp.ovh/imgs/2021/09/d9ea5ece13f9ddd5.png' width="800" />  <br \>
+
+1. dl里面只能包含 dt 和 dd。<br \>
+2. dt 和 dd 个数没有限制,经常是一个 dt 对应多个 dd 。<br \>
+3. dt 和 dd 是并列关系，不是包含关系<br \>
+
+<h3>之后学了CSS会来修饰这个，解决对不齐的问题
+</h3>
+<dl>
+  <dt>关注我们</dt>
+  <dd>新浪微博</dd>
+  <dd>官方微信</dd>
+  <dd>联系我们</dd>
+  <dd>男桐栋栋</dd>
+</dl>
+
+<h2>列表总结</h2>
+<img src = 'https://i.bmp.ovh/imgs/2021/09/2695676cc8e59155.png' width="800" />  <br \>
+
+
+
+
+<h1>表单</h1>
+<img src = 'https://i.bmp.ovh/imgs/2021/09/0f3a049174abc13f.png' width="800" /> <br \>
+
+<h3>表单域</h3>
+<img src = 'https://s3.bmp.ovh/imgs/2021/09/a9cbe16a9d5fce54.png' width="800" /> <br \>
+
+<h3>表单控件</h3>
+<img src = 'https://s3.bmp.ovh/imgs/2021/09/cd6ab02426aedb0d.png' width="800" /> <br \>
+
+<h2> input 表单元素</h2>
+<img src = 'https://s3.bmp.ovh/imgs/2021/09/6b8b8a4fd85d5075.png' width="800" /> <br \>
+<img src = 'https://s3.bmp.ovh/imgs/2021/09/d6b089de8a59f3d2.png' width="800" /> <br \>
+<img src = 'https://s3.bmp.ovh/imgs/2021/09/22ad801806821ca4.png' width="800" /> <br \>
+    <form action="xxx.php" method="post" name="name1">
+    <!--form里面的都行暂时用不到，可以不写。-->
+    <!--<form>-->
+    <!--  text 文本框，用户可以输入任何文字-->
+    <!--  value 默认内容，不是提示内容-->
+
+      用户名:<input type="text" name="username" value="栋栋" maxlength="8">  <br />
+      
+    <!--  password 密码框 用户看不见输入的密码-->
+      密码 ：<input type="password" name="password" >  <br />
+    <!--  radio 单选按钮-->
+    <!--  name 是表单元素的名字，这里性别单选按钮必须有一个相同的名字name，才能实现多选一-->
+    <!--  单选按钮和多选按钮可以设置 checked 属性，当页面打开时默认选中这个按钮-->
+      性别 ：男 <input type="radio" name="sex" value="男">
+            女 <input type="radio" name="sex" value="女">
+            男桐<input type="radio" name="sex" value="男桐" checked="checked"> <br \>
+    <!--  checkbox 复选框（多选按钮）name 也需要相同name-->
+      爱好： 吃饭 <input type="checkbox" name="hobby" value="吃饭">
+            睡觉 <input type="checkbox" name="hobby" value="睡觉">
+            打豆豆 <input type="checkbox" name="hobby" value="打豆豆">
+            打“针” <input type="checkbox" name="hobby" value="打“针”" checked="checked"> <br \>
+    <!--    普通按钮 button 后期结合js搭配使用-->
+      <input type="button" value="获取短信验证码"> <br \>
+    <!--  文件域 使用场景：上传文件时使用的-->
+      选择文件： <input type="file"> <br \>
+    <!--  点击按钮，可以将表单域 form 里面的表单元素 里面的值 提交给后台服务器-->
+    <!--    这里并没有设置有效from的属性，所以会跳转到错误界面-->
+      <input type="submit" value="免费注册">
+    <!--  重置按钮可以还原表单元素初始的默认状态-->
+      <input type="reset" value="重新填写"> <br \>
+
+      <h3>label 标签</h3>
+    <!--  label 标签-->
+      <img src = 'https://s3.bmp.ovh/imgs/2021/09/03d7dc8771630442.png' width="800" /> <br \>
+      性别：
+      <input type="radio" id="nan" name="sex2"> <label for="nan">男</label>
+      <input type="radio" id="nv"  name="sex2"> <label for="nv">女</label> <br \>
+
+
+
+
+      <h2>select 下拉表单元素</h2>
+    <!--  有多个选项让用户选择，还需要节省空间时，可以选择select 下拉表单-->
+    <!--  select 至少要包含两个 option-->
+    <!--  selected="selected" 设置为默认选项-->
+      <img src = 'https://s3.bmp.ovh/imgs/2021/09/7a752dd7fa12a3a6.png' width="800" /> <br \>
+      请选择你的男桐：
+      <select>
+        <option>杨毓栋1号</option>
+        <option>杨毓栋2号</option>
+        <option selected="selected">杨毓栋3号</option>
+        <option>杨毓栋4号</option>
+        <option>杨毓栋5号</option>
+        <option>杨毓栋6号</option>
+        <option>杨毓栋7号</option>
+        <option>杨毓栋8号</option>
+        <option>杨毓栋9号</option>
+        <option>杨毓栋10号</option>
+        <option>杨毓栋11号</option>
+      </select>
+
+
+
+      <h2>textarea 文本域元素</h2>
+      <img src = 'https://s3.bmp.ovh/imgs/2021/09/a7ada859178f650f.png' width="800" /> <br \>
+      评论：<textarea cols="50" rows="5">你可以在这里发表你的看法</textarea>
+
+
+    </form>
+
+
+
+</body>
+</html>

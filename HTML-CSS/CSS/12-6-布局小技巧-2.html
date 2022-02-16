@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 2、文字围绕浮动元素 */
+    /* 浮动在最开始就是做文字环绕的，所以浮动的元素不会覆盖文字 */
+    /* 利用这一点我们可以实现图片环绕文字 */
+    .box {
+        width: 300px;
+        height: 70px;
+        margin-top: 300px;
+        background-color: pink;
+        margin: 0 auto;
+        padding: 5px;
+    }
+
+    .box .pic {
+        float: left;
+        width: 120px;
+        height: 60px;
+        margin-right: 5px;
+    }
+
+    .box .pic img {
+        width: 100%;
+    }
+
+
+    /* 3、行内块的巧妙运用 */
+    .box2 {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .box2 a {
+        display: inline-block;
+        width: 36px;
+        height: 36px;
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+        text-align: center;
+        line-height: 36px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .box2 .prev,
+    .box2 .next {
+        width: 85px;
+        font-size: 14px;
+    }
+
+    .box2 .current,
+    .box2 .elp {
+        background-color: #fff;
+        border: none;
+    }
+
+    .box2 input {
+        width: 45px;
+        height: 36px;
+        border: 1px solid #ccc;
+        outline: none;
+    }
+
+    .box2 button {
+        width: 60px;
+        height: 36px;
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+    }
+
+
+    /* 4、CSS三角强化 */
+
+    /* 直角三角形示例 */
+    .box3 {
+        width: 0;
+        height: 0;
+        /* 上边框高度调大 */
+        /* border-top: 100px solid transparent; */
+        /* border-right: 50px solid skyblue; */
+        /* 坐下边框高度变为0 */
+        /* border-bottom: 0px solid transparent; */
+        /* border-left: 0px solid transparent; */
+
+        /* 简写 */
+        border-color: transparent skyblue transparent transparent;
+        border-style: solid;
+        border-width: 100px 50px 0 0;
+    }
+
+    .price {
+        width: 160px;
+        height: 24px;
+        line-height: 24px;
+        border: 1px solid red;
+        margin: 0 auto;
+    }
+
+    .price .miaosha {
+        position: relative;
+        float: left;
+        width: 90px;
+        height: 100%;
+        background-color: red;
+        text-align: center;
+        color: #fff;
+        font-weight: 700;
+        margin-right: 8px;
+    }
+
+    .price .miaosha i {
+        position: absolute;
+        right: 0;
+        top: 0;
+        /* 浮动也可以达到效果，但是文字就不居中显示了，需要调整 */
+        /* float: right; */
+        width: 0;
+        height: 0;
+        border-color: transparent #fff transparent transparent;
+        border-style: solid;
+        border-width: 24px 10px 0 0;
+    }
+
+    .price .origin {
+        font-size: 12px;
+        color: gray;
+        /* 删除线 */
+        text-decoration: line-through;
+    }
+</style>
+
+<body>
+    <!-- 2、文字围绕浮动元素 -->
+    <div class="box">
+        <div class="pic">
+            <img src="images/img.png" alt="">
+        </div>
+        <p>【集锦】热身赛-巴西0-1秘鲁内马尔替补两人血染赛场</p>
+    </div>
+
+    <!-- 3、行内块的巧妙运用 -->
+    <div class="box2">
+        <a href="#" class="prev">&lt;&lt;上一页</a>
+        <a href="#" class="current">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#" class="elp">...</a>
+        <a href="#" class="next">下一页&gt;&gt;</a>
+        到第
+        <input type="text">
+        页
+        <button>确定</button>
+    </div>
+
+    <!-- 4、CSS三角强化 -->
+    <div class="box3"></div>
+    <div class="price">
+        <span class="miaosha">
+            ￥1650
+            <i></i>
+        </span>
+        <span class="origin">￥5650</span>
+    </div>
+</body>
+
+</html>

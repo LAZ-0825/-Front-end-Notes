@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!--表示是由HTML5来打开文档-->
+<html lang="zh-CN">
+<!--设置当前文档的显示语言-->
+<head>
+    <meta charset="UTF-8">
+    <title>bug</title>
+</head>
+<body>
+
+<h4 id="TOP">顶部</h4>
+
+键盘敲烂，月薪过万
+<br />
+头发祭天，法力无边
+<br />
+奥里给，干了！
+
+<!--<h1>&#45;&#45;<h6> 六个等级的标题标签-->
+<h1>我是1级标题</h1>
+<h2>我是2级标题</h2>
+<h3>我是3级标题</h3>
+<h4>我是4级标题</h4>
+<h5>我是5级标题</h5>
+<h6>我是6级标题</h6>
+
+<!--<br /> 是强制换行的意思，且段落内换行不会影响段落分配-->
+<p>我是段落标签</p>
+<p>第一段 <br />第一段 第一段 第一段 第一段 第一段 第一段 第一段 第一段 第一段 第一段 </p>
+<p>第二段 <br />第二段 第二段 第二段 第二段 第二段 第二段 第二段 第二段 第二段 第二段 </p>
+
+<!--文本格式化标签-->
+文本格式化标签
+我是<strong>加粗</strong>的文字    <br />
+我是<b>加粗</b>的文字  <br />
+我是<em>倾斜</em>的文字    <br />
+我是<i>倾斜</i>i的文字     <br />
+我是<del>删除线</del>    <br />
+我是<s>删除线</s>    <br />
+我是<ins>下划线</ins>    <br />
+我是<u>下划线</u>    <br />
+
+<!--div->大盒子，span->小盒子-->
+<br />
+<div>我是div标签我自己独占一行</div>123
+
+<!--一行可以放多个span-->
+<span>span1 </span>
+<span>span2 </span>
+<span>span3 </span>
+<br />
+
+<!--图像标签-->
+<!--属性必须卸载标签名(src)后面，且属性和不分先后-->
+
+<h4>图像标签的使用</h4>
+<!--title 提示文本，鼠标放上去提示的文字-->
+<img src="https://s3.bmp.ovh/imgs/2021/08/3ee6979d30016a12.jpg" title="我是提示文本"> <br />
+
+<h4>替换文本，图像显示不出来的时候用文字替换</h4>
+<img src="https://s3.bmp.ovh/imgs/2021/08/3ee6979d30016a12ABCDEFG.jpg" alt="图片显示失败"> <br />
+
+<h4 id = "picture-1">替设置图片宽度和高度</h4>
+<!--只修改一个的话，可以保留图片纵横比-->
+<img src="https://s3.bmp.ovh/imgs/2021/08/3ee6979d30016a12.jpg"
+     alt="图片显示失败" width="450" > <br />
+
+<h4>替设置图片边框粗细</h4>
+<!--边框一般由css来实现（也可以修改颜色和设置圆角），所以此处划掉了，但也可以正常设置-->
+<img src="https://s3.bmp.ovh/imgs/2021/08/3ee6979d30016a12.jpg"
+     alt="图片显示失败" width="450" border="5"> <br />
+
+<h4>图片路径</h4>
+<img src="images/图片相对路径.png" width="800" /> <br />
+<br />
+<img src="images/图片绝对路径.png" width="800" /> <br />
+
+<h4>图片超链接</h4>
+<h4>连接的语法格式</h4>
+<img src = 'https://i.bmp.ovh/imgs/2021/09/4e080c5dc9acbefb.png' width="800" /> <br />
+
+<br \>
+<h3>链接</h3>
+<img src = 'images/链接.png' width="800" /> <br />
+
+
+<h4 id="LAZ-Blog">外部链接</h4>
+<a href = "https://laz-0825.github.io" target="_blank"> LAZ的博客 </a>
+
+<h4>内部链接 </h4>
+<a href = "123.html" target="_blank"> 内部链接测试 </a>
+
+<h4>空链接</h4>
+<!--空连接指向当前页面（应该是，我猜的-->
+<a href = "#" target="_blank"> 空链接 </a>
+
+<h4>网页元素链接</h4>
+<a href = "https://laz-0825.github.io"
+   target="_blank"
+> <img src = https://i.bmp.ovh/imgs/2021/10/7fe65800cb6981e0.jpg width="200"> </a>
+
+<h4>锚点链接</h4>
+<a href = "#LAZ-Blog"> 我要去外部链接的笔记 </a> <br \>
+<a href = "#picture-1"> 我要去设置图片大小的笔记 </a> <br \>
+<a href = "#TOP"> 返回顶部 </a>
+<!--之后给需要跳转的链接那里加一个id，内容就是这里的 href 去掉 # 的部分-->
+
+<h4>特殊字符</h4>
+<img src = 'https://i.bmp.ovh/imgs/2021/09/643de4062b45da3f.png' width="800" /> <br />
+
+
+
+</body>
+</html>
+

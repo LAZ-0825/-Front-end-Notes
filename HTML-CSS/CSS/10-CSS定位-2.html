@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .xiongda {
+        background-color: red;
+        /* 调整数值观察大小 */
+        z-index: 1;
+    }
+
+    .xionger {
+        background-color: green;
+        /* 调整数值观察大小 */
+        z-index: 2;
+        left: 50px;
+        top: 50px;
+
+    }
+
+    .qiangge {
+        background-color: blue;
+        /* 调整数值观察大小 */
+        z-index: auto;
+        left: 100px;
+        top: 100px;
+    }
+
+    .box1 {
+        position: absolute;
+        /* 1、left 走 50% 父元素宽度的一半 */
+        /* 2、margin 负值 调整位置 */
+        /* 这样写出来是活的（浏览器大小对水平垂直居中无影响） */
+        left: 50%;
+        margin-left: -100px;
+        top: 50%;
+        margin-top: -100px;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+
+    /* 定位的特殊性 */
+    .text1 {
+        position: absolute;
+        background-color: skyblue;
+        margin-top: 300px;
+        width: 100px;
+        height: 100px;
+    }
+</style>
+
+<body>
+    <div class="box xiongda">熊大</div>
+    <div class="box xionger">熊二</div>
+    <div class="box qiangge">光头强</div>
+    <div class="box1">绝对定位的盒子实现水平垂直居中</div>
+
+    <!-- 定位的特殊性 -->
+    <!-- 1、行内元素添加了绝对或固定定位，可以直接设置高度和宽度 -->
+    <span class="text1">123</span>
+</body>
+
+</html>

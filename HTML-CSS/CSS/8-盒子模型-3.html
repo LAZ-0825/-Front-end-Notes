@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* * {
+        margin: 0;
+        padding: 0;
+    } */
+
+    /* 圆角边框 */
+    .yuanxing {
+        width: 300px;
+        height: 300px;
+        background-color: pink;
+        /* 这是圆角边框，数值为圆角的半径（可以是数值或者百分比） */
+        border-radius: 50%;
+    }
+
+    .juxing {
+        width: 300px;
+        height: 100px;
+        background-color: pink;
+        /* 圆角矩形，border-radius 设置为高度的一半即可 */
+        border-radius: 50px;
+    }
+
+    .radius {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        /* 四个值，左上角开始，顺时针 */
+        /* border-radius: 10px 20px 30px 40px; */
+        /* 两个值，对角线（左上右下，左下右上） */
+        border-radius: 10px 40px;
+        /* 也可以一次写一个角 */
+        /* 例如：写左上角：border-top-left-radius */
+    }
+
+    /* 盒子阴影 */
+    /* 盒子阴影不占空间 */
+    .shadow {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        margin: 100px auto;
+    }
+
+    /* 原先盒子没有影子。当鼠标经过，就给盒子添加影子 */
+    div:hover {
+        /* 前两个属性必填，后面选填，具体请查看文档（懒得敲了） */
+        box-shadow: 10px 10px 10px -4px rgba(0, 0, 0, .3);
+    }
+
+    /* 文字阴影（了解即可） */
+    /* text-shadow，看文档罢，懒得敲了 */
+</style>
+
+<body>
+    1、圆形的做法
+    <div class="yuanxing"></div>
+    2、圆角矩阵的做法
+    <div class="juxing"></div>
+    3、可以设置不同的圆角
+    <div class="radius"></div>
+
+    盒子阴影
+    <div class="shadow"></div>
+
+</body>
+
+</html>

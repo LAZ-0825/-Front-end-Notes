@@ -1,0 +1,20 @@
+a {
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    /* 缩进，是内边距的临时替代（当时美学内边距） */
+    /* text-indent: 2em; */
+    /* 设置内边距，并使得宽度由 230 变成 200 */
+    padding-left: 30px;
+    /* 消除下划线 */
+    text-decoration: none;
+    /* 行高(垂直居中) */
+    line-height: 40px;
+    background-color: #535759;
+    /* 转换为块元素 */
+    display: block;
+}
+
+a:hover {
+    background-color: #FF6F00;
+}

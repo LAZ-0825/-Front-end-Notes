@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 对照 */
+    .box {
+        width: 0;
+        height: 0;
+        /* 修改行高和字体大小为0是为了兼容低版本浏览器，最好写上，高版本和移动端不写也行 */
+        line-height: 0;
+        font-size: 0;
+        border-top: 100px solid skyblue;
+        border-right: 100px solid red;
+        border-bottom: 100px solid pink;
+        border-left: 100px solid green;
+
+    }
+
+    /* 三角形的实现 */
+    .box2 {
+        /* 子绝父相 */
+        position: relative;
+        width: 0;
+        height: 0;
+        /* 修改行高和字体大小为0是为了兼容低版本浏览器，最好写上，高版本和移动端不写也行 */
+        line-height: 0;
+        font-size: 0;
+        border: 100px solid transparent;
+        border-top: 100px solid skyblue;
+        margin: 100px auto;
+    }
+
+    /* 京东小三角的实现 */
+    .jd {
+        /* 子绝父相 */
+        position: relative;
+        width: 120px;
+        height: 249px;
+        background-color: pink;
+    }
+
+    .jd .span1 {
+        /* 绝对定位 */
+        position: absolute;
+        right: 15px;
+        top: -10px;
+        width: 0;
+        height: 0;
+        /* 修改行高和字体大小为0是为了兼容低版本浏览器，最好写上，高版本和移动端不写也行 */
+        line-height: 0;
+        font-size: 0;
+        border: 5px solid transparent;
+        border-bottom-color: pink;
+    }
+
+    .jd .span2 {
+        /* 绝对定位 */
+        position: absolute;
+        left: 120px;
+        top: 120px;
+        width: 0;
+        height: 0;
+        line-height: 0;
+        font-size: 0;
+        border: 5px solid transparent;
+        border-left-color: pink;
+    }
+</style>
+
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="jd">
+        <span class="span1"></span>
+        <span class="span2"></span>
+    </div>
+</body>
+
+</html>

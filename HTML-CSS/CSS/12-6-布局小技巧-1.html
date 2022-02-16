@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 1、margin负值的运用 */
+    ul li {
+        /* 特殊原因加个定位（演示加定位改怎么办） */
+        position: relative;
+        float: left;
+        list-style: none;
+        width: 150px;
+        height: 200px;
+        border: 1px solid red;
+        /* 是没问题的，浏览器看起来怪怪的话放大看就清楚了 */
+        margin-left: -1px;
+    }
+
+    /* 1、如果盒子没有定位，鼠标经过添加相对定位即可 */
+    /* ul li:hover {
+        background-color: blue;
+        position: relative;
+    } */
+    ul li:hover {
+        border-color: blue;
+        /* 2、盒子加了定位的话，提高它的 z-index 即可 */
+        z-index: 1;
+    }
+</style>
+
+<body>
+    <!-- 1、margin负值的运用 -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+
+</html>

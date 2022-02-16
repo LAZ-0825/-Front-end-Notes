@@ -1,0 +1,35 @@
+/* CSS文件里面只有样式，没有style标签 */
+
+/* CSS Text（文本）属性可以定义文本的外观，比如文本的颜色、对其文本、装饰文本、文本缩进、行间距等 */
+
+div {
+    /* 文本颜色 */
+    /* color: deeppink; */
+    /* color: #cc00ff; */
+    color: rgb(255, 0, 255);
+
+    /* 装饰文本 */
+    /* 具体可以查阅文档，懒得写了 */
+    text-decoration: underline;
+}
+
+/* 对其文本 */
+h1 {
+    /* text-align -> 设置文本水平对其格式。left-左对齐(默认值)，right-右对齐，center-居中对齐 */
+    /* 本质是让h1盒子里的文字水平居中对其 */
+    text-align: center;
+}
+
+p {
+    /* 文本缩进 */
+    /* 常用于段落首行缩进 */
+    font-size: 16px;
+    /* text-indent: 48px; */
+    /* 首行缩进两字符 */
+    text-indent: 2em;
+
+    /* 行间距() */
+    /* 由文本高度、上间距、下间距组成 */
+    /* 此处为 16 + 5 + 5 = 26 */
+    line-height: 26px;
+}

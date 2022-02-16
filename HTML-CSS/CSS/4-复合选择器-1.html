@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        /* 后代选择器（所有后代都可以选） */
+        ol li {
+            /* 这种写法表示的是对 ol 中的 li 起作用（ li 是 ol 的后代） */
+            color: pink;
+        }
+
+        ol li a {
+            color: red;
+        }
+
+        .nav li a {
+            color: brown;
+        }
+
+        /* 子选择器（亲儿子选择器，只能选择亲儿子） */
+        .nav2>a {
+            color: pink;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h4>后代选择器</h4>
+    <ol>
+        我在ol里面，但我不是li，嘻嘻，所以我不变色
+        <li>我是小li，是 ol 的孩子</li>
+        <li>我是小li，是 ol 的孩子</li>
+        <li>我是小li，是 ol 的孩子</li>
+        <li><a href="#">我是a，是ol的孙子，li的儿子，我会变色</a></li>
+    </ol>
+
+    <ul>
+        <li>我是小li，是 ul 的孩子</li>
+        <li>我是小li，是 ul 的孩子</li>
+        <li>我是小li，是 ul 的孩子</li>
+        <li><a href="#">我是a，是ul的孙子，li的儿子，我不会变色</a></li>
+    </ul>
+
+    <ul class="nav">
+        <li>我是小li，是 ul 的孩子</li>
+        <li>我是小li，是 ul 的孩子</li>
+        <li>我是小li，是 ul 的孩子</li>
+        <li><a href="#">我是a，是ul(niv)的孙子，li的儿子，我会变色</a></li>
+        <li><a href="#">我是a，是ul(niv)的孙子，li的儿子，我会变色</a></li>
+        <li><a href="#">我是a，是ul(niv)的孙子，li的儿子，我会变色</a></li>
+        <li><a href="#">我是a，是ul(niv)的孙子，li的儿子，我会变色</a></li>
+    </ul>
+
+    <h4>子选择器</h4>
+    <div class="nav2">
+        <a href="#">我是 nav2 的儿子，会变色</a>
+        <p>
+            <a href="#">我是 nav2 的孙子，不会变色</a>
+        </p>
+    </div>
+
+
+
+</body>
+
+</html>

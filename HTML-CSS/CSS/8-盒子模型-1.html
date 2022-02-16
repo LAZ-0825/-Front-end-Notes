@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        width: 300px;
+        height: 200px;
+
+        /* 边框 */
+        /* border-width: 边框粗细 一般是 **px */
+        border-width: 5px;
+        /* border-style: 边框样式，一般是 solid 实线边框 dashed 虚线边框 dotted 点线边框 */
+        /* 具体其他的边框样式建议查阅手册 */
+        border-style: solid;
+        border-color: pink;
+        /* 复合写法，没有顺序 */
+        /* border: 5px dashed pink; */
+        /* 边框分开写法 */
+        border-top: 5px dashed red;
+        border-bottom: 5px dotted skyblue;
+        /* 写边框的时候注意边框属性的层叠性 */
+        /*  */
+        /* 注意：边框会影响盒子的实际大小！！！！(包在盒子外面的) */
+
+        /* 内边距 */
+        /* 内边距 padding 也可以分开设置 eg: padding-left 等 */
+        /* 注意：内边距会影响盒子的实际大小！！！！(包在盒子里面的) */
+        /* 如果盒子本身没有指定 widch/height 属性，则此时padding不会撑开盒子大小（指定100%的 widch/height != 未指定 widch/height） */
+        /* 父元素未指定时，子元素继承后同上 */
+        padding: 20px;
+        /* padding: 5px; 1个值，代表上下左右都有5像素内边距 */
+        /* padding: 5px 10px; 2个值，代表上下内边距是5像素，左右内边距是10像素 */
+        /* padding: 5px 10px 20px; 三个值，代表上内边距5像素，左右内边距10像素，下内边距20像素 */
+        /* padding: 5px 10px 20px 30px; 四个值，上5像素，右10像素，下20像素，左30像素，顺时针顺序书写 */
+
+        /* 外边距 */
+    }
+
+    .onediv {
+        margin-bottom: 20px;
+    }
+
+    .twodiv {
+        margin: 50px;
+        /* margin 由多个元素时，书写方法和padding相同 */
+        /* 垂直外边距会相互包含，因为 50 > 20，所以此时的外边距为50 */
+    }
+
+    /* 细线表格 */
+    table {
+        width: 500px;
+        height: 249px;
+    }
+
+    th {
+        height: 35px;
+    }
+
+    table,
+    td,
+    th {
+        border: 1px solid pink;
+        /* 合并相邻的边框 使得 1 + 1 = 1 */
+        border-collapse: collapse;
+        /* 修改文字大小 */
+        font-size: 14px;
+        /* 文字水平居中对齐 */
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="onediv">
+        盒子的内容是content盒子的内容是content盒子的内容是content盒子的内容是content盒子的内容是content盒子的内容是content盒子的内容是content
+    </div>
+    <div class="twodiv">
+        我是第二个盒子我是第二个盒子我是第二个盒子我是第二个盒子我是第二个盒子我是第二个盒子我是第二个盒子我是第二个盒子我是第二个盒子我是第二个盒子
+    </div>
+
+    <table align="center" cellspacing="0" ">
+
+        <thead>
+            <tr>
+                <th>排名</th>
+                <th>关键词</th>
+                <th>趋势</th>
+                <th>今日搜索</th>
+                <th>最近七日</th>
+                <th>相关链接</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td> 1 </td>
+                <td>鬼吹灯</td>
+                <td><img src=" images/down.jpg">
+        </td>
+        <td>345</td>
+        <td>123</td>
+        <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 2 </td>
+            <td>盗墓笔记</td>
+            <td><img src="images/down.jpg"></td>
+            <td>124</td>
+            <td>1234563</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 3 </td>
+            <td>西游记</td>
+            <td><img src="images/up.jpg"></td>
+            <td>212</td>
+            <td>123456</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 4 </td>
+            <td>东游记</td>
+            <td><img src="images/up.jpg"></td>
+            <td>23</td>
+            <td>456123</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 5 </td>
+            <td>甄嬛传</td>
+            <td><img src="images/down.jpg"></td>
+            <td>121</td>
+            <td>987132</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 6 </td>
+            <td>水浒传</td>
+            <td><img src="images/up.jpg"></td>
+            <td>576576</td>
+            <td>312789</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 7 </td>
+            <td>三国演义</td>
+            <td><img src="images/up.jpg"></td>
+            <td>234</td>
+            <td>963741</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+        </tbody>
+
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 这里懒得敲了，笔记详见截图 */
+    /* 相对定位 relative（了解） */
+    .box1 {
+        position: relative;
+        top: 100px;
+        left: 100px;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+
+    .box2 {
+        width: 200px;
+        height: 200px;
+        background-color: deeppink;
+    }
+
+    /* 绝对定位 absolute */
+    .yeye {
+        /* 子绝父相 不然会影响下面的元素 */
+        position: relative;
+        width: 500px;
+        height: 500px;
+        background-color: #ccc;
+        padding: 50px;
+    }
+
+    .father {
+        /* position: absolute; */
+        width: 300px;
+        height: 300px;
+        background-color: deepskyblue;
+    }
+
+    .son {
+        position: absolute;
+        left: 30px;
+        bottom: 10px;
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+
+    /* 固定定位 fixed */
+    .daji {
+        position: fixed;
+        top: 0px;
+        right: 40px;
+    }
+
+    .guanggao {
+        position: fixed;
+        top: 100px;
+        left: 40px;
+    }
+
+    /* 固定定位定位在版心侧边 */
+    .w {
+        width: 800px;
+        height: 1000px;
+        background-color: pink;
+        margin: 0 auto;
+    }
+
+    .fixed {
+        position: fixed;
+        /* 1、走浏览器宽度的一半 */
+        left: 50%;
+        /* 2、通过 margin 走版心宽度的一半，并留一些空隙（400+5=405） */
+        margin-left: 405px;
+        top: 500px;
+        width: 50px;
+        height: 150px;
+        background-color: skyblue;
+    }
+
+    /* 粘性定位 sticky（了解） */
+    .nav {
+        position: sticky;
+        top: 0px;
+        width: 800px;
+        height: 50px;
+        background-color: palegreen;
+        margin: 100px auto;
+    }
+</style>
+
+<body>
+
+
+    <!-- 粘性定位 sticky（了解） -->
+    <!-- 写到上面来，下面不好看（ -->
+    <div class="nav">我是导航栏（粘性定位 sticky）</div>
+
+    <!-- 这里懒得敲了，笔记详见截图 -->
+    <!-- 相对定位 relative（了解） -->
+    <div class="box1">相对定位 relative</div>
+    <div class="box2">相对定位 relative</div>
+
+    <!-- 绝对定位 relative -->
+    <div class="yeye">
+        <div class="father">
+            绝对定位 absolute
+            <div class="son">绝对定位 absolute</div>
+        </div>
+    </div>
+
+    <!-- 固定定位 fixed -->
+    <div class="daji">
+        <img src="images/pvp.png" alt="图片加载失败">
+    </div>
+    <div class="guanggao">
+        <img src="images/logo.png" alt="图片加载失败">
+    </div>
+    <div class="fixed"></div>
+    <div class="w">版心盒子，800像素</div>
+
+
+</body>
+
+</html>

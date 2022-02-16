@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 300px;
+            height: 300px;
+            /* background-color: transparent; 透明色*/
+            background-color: pink;
+            background-image: url(images/logo.png);
+            /* 设置背景不平铺（默认为平铺 -> repeat） */
+            /* 沿x轴平铺 -> repeat-x  沿y轴平铺 -> repeat-y */
+            /* 页面元素既可以添加背景颜色，也可以添加背景图片，只不过背景图片会压住背景颜色 */
+            background-repeat: no-repeat;
+            /* 第一种情况，写方位名词 */
+            /* 写方位的时候，可以写两个(与顺序无关)，也可以写一个(另一个默认水平垂直居中) */
+            /* background-position: left; */
+            /* 第二种情况，写具体像素，先x后y，也可以写一个(写的这个一定是x，y默认水平垂直居中) */
+            background-position: 20px 50px;
+            /* 第三种情况，写混合单位，先x后y，也可以写一个(写的这个一定是x，y默认水平垂直居中 */
+            background-position: 20px center;
+        }
+
+        h3 {
+            width: 118px;
+            height: 40px;
+            /* 北京颜色可以让我们快速看到它，但其实没必要，自己加的 */
+            background-color: pink;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 40px;
+            background-image: url(images/icon.png);
+            background-repeat: no-repeat;
+            /* 之后会学精确调整文字位置，这里先这样凑活一下 */
+            text-indent: 1.5em;
+            background-position: left;
+        }
+
+        body {
+            /* 背景颜色其实没用 */
+            background-color: black;
+            background-image: url(images/bg.jpg);
+            background-position: center top;
+            background-repeat: no-repeat;
+            /* 将背景图片固定，默认背景滚动 -> scroll */
+            background-attachment: fixed;
+            /* 复合写法(没有固定顺序，一般采取约定顺序为：background: 背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置) */
+            /* background: black url(images/bg.jpg) no-repeat fixed center top; */
+            /* 这样写出来和上面的效果相同 */
+            color: #fff;
+            font-size: 20px;
+        }
+
+        .text {
+            width: 300px;
+            height: 750px;
+            /* color: black; */
+            /* 背景颜色半透明时，可以将0.3简写为 .3 */
+            background: rgba(0, 0, 0, .3);
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+    <h3>成长守护平台</h3>
+    <div class="text">
+        <p>天王盖地虎，pink老师一米五1</p>
+        <p>天王盖地虎，pink老师一米五2</p>
+        <p>天王盖地虎，pink老师一米五3</p>
+        <p>天王盖地虎，pink老师一米五4</p>
+        <p>天王盖地虎，pink老师一米五5</p>
+        <p>天王盖地虎，pink老师一米五6</p>
+        <p>天王盖地虎，pink老师一米五7</p>
+        <p>天王盖地虎，pink老师一米五8</p>
+        <p>天王盖地虎，pink老师一米五9</p>
+        <p>天王盖地虎，pink老师一米五10</p>
+        <p>天王盖地虎，pink老师一米五11</p>
+        <p>天王盖地虎，pink老师一米五12</p>
+        <p>天王盖地虎，pink老师一米五13</p>
+        <p>天王盖地虎，pink老师一米五14</p>
+        <p>天王盖地虎，pink老师一米五15</p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        width: 150px;
+    }
+
+    /* 1、选择ul里的第一个叫 li 的孩子 li */
+    ul li:first-child {
+        background-color: pink;
+    }
+
+    /* 2、选择ul里的最后一个叫 li 的孩子 li */
+    ul li:last-child {
+        background-color: skyblue;
+    }
+
+    /* 3、选择ul里的第n个叫 li 的孩子 li */
+    /* n可以是关键字、数字或者表达式 */
+    ul li:nth-child(5) {
+        background-color: #ccc;
+    }
+
+    /* 3-1、选取所有第偶数个孩子 */
+    ul li:nth-child(even) {
+        color: yellowgreen;
+    }
+
+    /* 3-2、选取所有第奇数个孩子 */
+    ul li:nth-child(odd) {
+        color: blue;
+    }
+
+    /* 3-3、n可以是公式 */
+
+    /* 3-3、nth-child(n) 从0开始，每次+1，往后面计算 这里面必须是n，不能是其他的字母 相当于选择了所有的孩子 */
+    /* ol li:nth-child(n) {
+        background-color: pink;
+    } */
+
+    /* 3-4、nth-child(2n) 相当于选择了所有的偶数孩子 等价于even */
+    ol li:nth-child(2n) {
+        background-color: skyblue;
+    }
+
+    /* 3-5、nth-child(2n+1) 相当于选择了所有的奇数孩子 等价于odd */
+    ol li:nth-child(2n+1) {
+        background-color: pink;
+    }
+
+    /* 3-6、nth-child(n+3) 相当于从第三个开始选择，前两个不选 */
+    ol li:nth-child(n+3) {
+        color: yellowgreen;
+    }
+
+    /* 3-7、nth-child(-n+2) 相当只选择前两个，后面的不选 */
+    ol li:nth-child(-n+2) {
+        color: red;
+    }
+</style>
+
+<body>
+    <ul>
+        <div>0</div>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+        <p>0</p>
+    </ul>
+    <ol>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ol>
+</body>
+
+</html>

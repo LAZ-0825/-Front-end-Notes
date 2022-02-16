@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title(这里是标题)</title>
+
+    <!--    CSS写在这里-->
+    <style>
+        /*选择器 {样式}*/
+        /*给谁改样式 {改成什么样式}*/
+
+        /*元素选择器 根据元素来选择 */
+        p {
+            color: #29ffd9;
+            /*修改文字大小为20像素。 font -> 字体 */
+            font-size: 20px;
+            /*居中显示*/
+            text-align: center;
+        }
+
+        /*id选择器 根据元素的唯一id来选择特定元素*/
+
+        #p1 {
+            color: red;
+            font-size: 30px;
+            text-align: left;
+        }
+
+        /*css类选择器*/
+        /*所有带有 class="text1" 的 HTML 元素将为红色且居中对齐*/
+
+        /*.center {*/
+        /*    text-align: center;*/
+        /*    color: red;*/
+        /*}*/
+
+
+        /*指定特定的 HTML 元素会受类的影响*/
+        /*只有具有 class="text1" 的 <p> 元素会居中对齐*/
+        p.center {
+            text-align: center;
+            color: red;
+        }
+
+        p.large {
+            font-size: 300%;
+        }
+
+        /*css通用选择器，会影响界面上每个HTML元素*/
+        /*但是效果会被特定设置覆盖，详情参照 h1 标题“这个标题不受影响”*/
+        /** {*/
+        /*    text-align: center;*/
+        /*    color: blue;*/
+        /*}*/
+
+        /*css分组选择器*/
+        /*分组选择器选取所有具有相同样式定义的 HTML 元素。*/
+
+        h2,
+        h3,
+        h4 {
+            text-align: center;
+            color: brown;
+        }
+
+        /* 通配符选择器：选取页面中所有的元素进行作用 */
+        /* 书写方式： */
+        /* 特殊情况下才选择使用，以下是清除所有的元素标签的内外边距，后期讲 */
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+
+
+        /*测试案例*/
+
+        .box {
+            width: 100px;
+            height: 100px;
+            font-size: 30px;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .pink {
+            background-color: pink;
+        }
+
+        .green {
+            background-color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <p>元素选择器</p>
+    <p>同种元素均会受到影响</p>
+
+    <p id="p1">id选择器，根据id选取特定元素</p>
+
+    <h1 class="text1">这个标题不受影响</h1>
+    <p class="center">这个是 class="text1" 的 p 元素</p>
+    <p class="center large">这个段落引用两个类。</p>
+
+    <h2>这里是h2标题</h2>
+    <h2>这里是h3标题</h2>
+    <h2>这里是h4标题</h2>
+
+    <div class="box pink">粉色</div>
+    <div class="box red">红色</div>
+    <div class="box green">绿色</div>
+
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        /* 所有元素均不会被边框和内边距撑大（不超过范围的情况下） */
+        /* 建议这样写，比较方便 */
+        box-sizing: border-box;
+    }
+
+    .text {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 20px solid red;
+        padding: 15px;
+        margin-bottom: 50px;
+        box-sizing: content-box;
+    }
+
+    .text2 {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+        border: 20px solid red;
+        padding: 15px;
+        box-sizing: border-box;
+    }
+</style>
+
+<body>
+    <div class="text">默认计算盒子大小是 box-sizing: content-box; 盒子会变大</div>
+    <div class="text2">更改计算盒子大小为 box-sizing: border-box; 盒子不会变大</div>
+</body>
+
+</html>

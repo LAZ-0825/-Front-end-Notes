@@ -1,0 +1,47 @@
+.nav a {
+    /* 模式转换 */
+    display: inline-block;
+    width: 120px;
+    height: 58px;
+    /* 行高变小，使得文字可以在上方垂直居中（不考虑小三角） */
+    line-height: 48px;
+    /* 文字水平居中显示 */
+    text-align: center;
+    /* background-color: pink; 测试用色 */
+    /* 文字颜色 */
+    color: #fff;
+    /* 取消下划线 */
+    text-decoration: none;
+}
+
+.nav .bg1 {
+    background: url(images/bg1.png) no-repeat;
+}
+
+.nav .bg1:hover {
+    background-image: url(images/bg11.png);
+}
+
+.nav .bg2 {
+    background: url(images/bg2.png) no-repeat;
+}
+
+.nav .bg2:hover {
+    background-image: url(images/bg22.png);
+}
+
+.nav .bg3 {
+    background: url(images/bg3.jpg) no-repeat;
+}
+
+.nav .bg3:hover {
+    background-image: url(images/bg33.png);
+}
+
+.nav .bg4 {
+    background: url(images/bg4.png) no-repeat;
+}
+
+.nav .bg4:hover {
+    background-image: url(images/bg44.png);
+}

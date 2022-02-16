@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 并集选择器 */
+        div,
+        p,
+        .pig li {
+            color: aquamarine;
+        }
+
+        /* 伪类选择器：链接伪类选择器 */
+        /* 为确保链接伪类选择器可以成功生效，请按照 LVHA(link、visited、hover、active) 的顺序进行声明 */
+        /* a:link          选择所有未被访问的链接 */
+        /* a:visited       选择所有已被访问的链接 */
+        /* a:hover         选择鼠标指针位于其上的链接 */
+        /* a:active        选择活动链接(鼠标按下未弹起的链接) */
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #369;
+            text-decoration: underline;
+        }
+
+        /* 将获取光标的input表单元素选取出来 */
+        input:focus {
+            background-color: pink;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h4>并集选择器</h4>
+    <div>熊大</div>
+    <p>熊二</p>
+    <span>光头强</span>
+    <ul class="pig">
+        <li>小猪佩奇</li>
+        <li>猪爸爸</li>
+        <li>猪妈妈</li>
+    </ul>
+
+    <h4>伪类选择器</h4>
+    <!-- 伪类选择器非常多，这里使用 链接伪类选择器 进行教学 -->
+    <a href="#">我是一个链接</a><br>
+    <a href="http://www.xxxxxxxx.com">一个未知的网站</a><br>
+    <!-- :focus 伪类选择器 -->
+    <input type="text"><br>
+    <input type="text"><br>
+    <input type="text"><br>
+</body>
+
+</html>

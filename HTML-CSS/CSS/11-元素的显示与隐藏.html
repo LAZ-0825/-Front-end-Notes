@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    /* 本节笔记懒得敲了，具体查看文档叭 */
+    /* display visibility overflow */
+    .peppa {
+        /* 隐藏 且不保留位置 */
+        /* display: none; */
+        /* 显示 */
+        display: block;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+
+    .george {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+
+    .father {
+        /* 隐藏 但保留位置 */
+        visibility: hidden;
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+    }
+
+    .mother {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+    }
+
+    .txt {
+        /* visible 显示溢出部分 */
+        /* overflow: visible; */
+        /* hidden 隐藏溢出部分 */
+        /* overflow: hidden; */
+        /* scroll 溢出的部分显示滚动条 不超出也显示 */
+        /* overflow: scroll; */
+        /* auto 在需要时剪切内容并添加滚动条  */
+        overflow: auto;
+
+        width: 200px;
+        height: 200px;
+        border: 3px solid pink;
+        margin: 100px auto;
+    }
+</style>
+
+<body>
+    <div class="peppa">佩奇</div>
+    <div class="george">乔治</div>
+    <div class="father">猪爸爸</div>
+    <div class="mother">猪妈妈</div>
+    <div class="txt">
+        这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。
+        这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。
+        这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。
+        这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。
+        这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。这里的文字过多会溢出。
+    </div>
+</body>
+
+</html>

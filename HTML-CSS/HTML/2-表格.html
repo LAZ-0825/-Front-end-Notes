@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--    table -> 表格-->
+<!--    th -> 表头单元格 文字会加粗居中显示-->
+<!--    td -> 普通单元格-->
+    <table>
+        <tr>  <th>姓名</th>  <th>性别</th>  <th>性取向</th>  </tr>
+        <tr>  <td>杨毓栋1</td>  <td>男</td>    <td>男桐</td>  </tr>
+        <tr>  <td>杨毓栋2</td>  <td>男</td>    <td>男桐</td>  </tr>
+        <tr>  <td>杨毓栋3</td>  <td>男</td>    <td>男桐</td>  </tr>
+        <tr>  <td>杨毓栋4</td>  <td>男</td>    <td>男桐</td>  </tr>
+    </table>
+
+    <h4>表格属性</h4>
+<!--表格属性在开发时不常用，一般用css来实现.所以这里划掉了-->
+<img src = 'https://i.bmp.ovh/imgs/2021/09/4f9f4c1f70e6bab4.png' width="700" />
+<table align="center" border="1" cellpadding="30" cellspacing="0"
+        width="800" height = "250">
+
+    <thead>
+        <tr>
+            <th>排名</th>
+            <th>关键词</th>
+            <th>趋势</th>
+            <th>今日搜索</th>
+            <th>最近七日</th>
+            <th>相关链接</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td> 1 </td>
+            <td>鬼吹灯</td>
+            <td><img src="images/down.jpg"></td>
+            <td>345</td>
+            <td>123</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 2 </td>
+            <td>盗墓笔记</td>
+            <td><img src="images/down.jpg"></td>
+            <td>124</td>
+            <td>1234563</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 3 </td>
+            <td>西游记</td>
+            <td><img src="images/up.jpg"></td>
+            <td>212</td>
+            <td>123456</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 4 </td>
+            <td>东游记</td>
+            <td><img src="images/up.jpg"></td>
+            <td>23</td>
+            <td>456123</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 5 </td>
+            <td>甄嬛传</td>
+            <td><img src="images/down.jpg"></td>
+            <td>121</td>
+            <td>987132</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 6 </td>
+            <td>水浒传</td>
+            <td><img src="images/up.jpg"></td>
+            <td>576576</td>
+            <td>312789</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+
+        <tr>
+            <td> 7 </td>
+            <td>三国演义</td>
+            <td><img src="images/up.jpg"></td>
+            <td>234</td>
+            <td>963741</td>
+            <td> <a href="https://laz-0825.github.io" target="_blank">相关链接</a> </td>
+        </tr>
+    </tbody>
+
+</table>
+
+<!--合并单元格-->
+<img src = 'https://i.bmp.ovh/imgs/2021/09/08413738ad275a74.png' width="800"/>
+<h3>目标单元格（写合并代码）</h3>
+<b>跨行</b>：最上侧单元格为目标单元格，写合并代码<br \>
+<b>跨列</b>：最左侧单元格为目标单元格，写合并代码<br \>
+<h3>合并单元格三部曲</h3>
+1. 先确定十跨行还是跨列合并<br \>
+2. 找到目标单元格，协商合并方式 = 合并的单元格数量。比如：见注释<br \>
+<!--<td colspan="2"></td>-->
+3.删除多余单元格<br \>
+
+<table align="center" border="1" cellpadding="30" cellspacing="0" height="300" >
+    <thead>
+        <tr>
+            <th colspan="3">个人简介</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>性取向</th>
+        </tr>
+        <tr>  <td>杨毓栋1</td>  <td rowspan="4">男</td>    <td rowspan="4">男桐</td>  </tr>
+        <tr>  <td>杨毓栋2</td>  </tr>
+        <tr>  <td>杨毓栋3</td>  </tr>
+        <tr>  <td>杨毓栋4</td>  </tr>
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>

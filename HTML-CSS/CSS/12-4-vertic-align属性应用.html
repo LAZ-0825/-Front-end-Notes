@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img {
+        /* 图片与文字垂直对齐  其他属性值看截图叭（CSS高阶技巧第八图第九图） */
+        vertical-align: middle;
+    }
+
+    textarea {
+        resize: none;
+        vertical-align: middle;
+    }
+</style>
+
+<body>
+    <!-- vertic-align属性应用 图片和文本域都可用 -->
+    <img src="images/ldh.jpg" alt="图片加载失败"> pink老师是刘德华
+    <br>
+    <textarea name="" id="" cols="30" rows="10"></textarea>请您留言
+    <br>
+
+    <!-- 解决图片底部默认空白缝隙的问题 -->
+    <!-- 两种解决方法 -->
+    <!-- 1、给图片添加vertical-align: middle | top | bottom 等。（提倡使用） -->
+    <!-- 2、把图片转换为块级元素 display:block -->
+</body>
+
+</html>

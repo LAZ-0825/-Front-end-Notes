@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    input,
+    area {
+        /* 取消表单轮廓  */
+        outline: none;
+    }
+
+    .area1 {
+        /* 防止拖拽文本域 */
+        resize: none;
+    }
+</style>
+
+<body>
+    <!-- 更改鼠标样式 -->
+    <ul>
+        <li style="cursor: default;">我是默认的小白鼠标样式</li>
+        <li style="cursor: pointer;">我是鼠标小手样式</li>
+        <li style="cursor: move;">我是鼠标移动样式</li>
+        <li style="cursor: text;">我是鼠标文本样式</li>
+        <li style="cursor: not-allowed;">我是鼠标禁止样式</li>
+    </ul>
+
+    <!-- 取消表单轮廓，指的是 input 被光标选中后新显示的轮廓，不同浏览器颜色不同 -->
+    <input type="text" class="text">
+
+    <!-- 防止拖拽文本域（更改大小） -->
+    <!-- 第一个防拖拽第二个没有 -->
+    <textarea name="" id="" cols="30" rows="10">我改了outline属性为none</textarea>
+    <textarea name="" id="" cols="30" rows="10" class="area1">我没改outline属性</textarea>
+</body>
+
+</html>

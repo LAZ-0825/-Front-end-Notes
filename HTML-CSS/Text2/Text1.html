@@ -1,0 +1,40 @@
+<html>
+
+<head>
+
+    <!-- 可以将js代码写在外部文件里面，然后通过script标签引入
+         写在外部文件中，可以在多个界面中同时引用，也可以利用到浏览器的缓存机制
+         是推荐使用的方式    -->
+         <!-- 注意：script 标签一旦杯用来引入外部文件，就不能用来编写代码了。就算编写了，浏览器也会忽略
+        如果需要，可以再新建一个script标签用于写代码
+        script标签的执行顺序由上到下（改变位置会改变执行顺序） -->
+    <script src="text1.js">
+        alert("我会被忽略的呜呜呜");
+    </script>
+
+    <script>
+        alert("我不会被忽略好耶 ~ ~ ~（是内部JS代码）");
+
+        var a = 100;
+        var b = "Hello";
+        c = true;
+        function fun() {
+            alert("Hello");
+        }
+        var d = 35;
+        alert(a);
+
+    </script>
+</head>
+
+<body>
+
+    <!-- 可以将js代码写在属性里 -->
+    <!-- 不建议这么写，结构和行为耦合了，不方便维护 -->
+    <button onclick="alert('你点我干嘛 ~ ~ ~')">点我一下</button>
+    <a href="javascript:alert('让你点你就点 ? ? ?')">你也点我一下</a>
+    <a href="javascript:">不行，你也点我一下</a> <!-- 设置点了之后没反应 -->
+
+</body>
+
+</html>
