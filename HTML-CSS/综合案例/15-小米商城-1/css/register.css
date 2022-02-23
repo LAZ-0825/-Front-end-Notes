@@ -1,0 +1,106 @@
+* {
+    /* 输入框选中后没有框框 */
+    outline: none;
+    /* 用户无法选中文本 */
+    user-select: none;
+}
+
+body {
+    background: url(../images/signin-bgc2.png) no-repeat -50%;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, .3);
+
+    /* 毛玻璃效果 */
+    backdrop-filter: blur(3px);
+    border-left: 2px solid rgba(255, 255, 255, .3);
+    border-top: 2px solid rgba(255, 255, 255, .3);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, .2);
+    text-align: center;
+}
+
+h1 {
+    margin: 20px;
+    font-weight: 400;
+    font-size: 88px;
+    font-family: "Berlin Sans FB";
+}
+
+.tt {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, .2);
+    opacity: 0.9;
+}
+
+input {
+    border: none;
+    width: 80%;
+    font-size: 22px;
+    padding: 10px;
+    margin-bottom: 32px;
+    border-radius: 16px;
+    background-color: transparent;
+
+    /* 毛玻璃效果 */
+    backdrop-filter: blur(3px);
+    border-left: 2px solid rgba(255, 255, 255, .3);
+    border-top: 2px solid rgba(255, 255, 255, .3);
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    font-family: "Berlin Sans FB";
+    color: #fff;
+}
+
+/* 设置提示文本颜色 */
+::placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+
+.btn {
+    width: 240px;
+    font-size: 34px;
+    font-weight: 450;
+    margin-top: 0px;
+    /* 鼠标小手 */
+    cursor: pointer;
+}
+
+input:focus {
+    border: none;
+    background-color: rgba(255, 255, 255, .1);
+
+    /* 毛玻璃效果 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, .2);
+    border-right: 2px solid rgba(255, 255, 255, .3);
+    border-bottom: 2px solid rgba(255, 255, 255, .3);
+    box-shadow: inset 2px 2px 2px rgba(0, 0, 0, .2);
+}
+
+form p {
+    margin-top: -22px;
+}
+
+form i {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+}
+
+form i img {
+    width: 100%;
+}
