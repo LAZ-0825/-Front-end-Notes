@@ -148,7 +148,7 @@
     width: 0;
     height: 0;
     /* 先让边框为0，鼠标在那里的时候再给边框宽度使之显示 */
-    border-bottom: 0px solid #fff;
+    border-bottom: 0 solid #fff;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
 }
@@ -624,8 +624,8 @@
 }
 
 .adv-aside li:nth-child(3n):before {
-    width: 0px;
-    height: 0px;
+    width: 0;
+    height: 0;
 }
 
 /* 广告样式 adv 结束 */
@@ -1022,7 +1022,7 @@
 .contact .follow {
     position: relative;
     margin-top: 10px;
-    font-style: 12px;
+    font-size: 12px;
     color: #616161;
 }
 
@@ -1188,22 +1188,25 @@
 
 .sidebar>div:first-child {
     z-index: 600;
+    margin: 0;
+    padding: 0;
 }
 
 .sidebar-hongbao {
     position: absolute;
     top: 0;
-    right: 80px;
+    right: 104px;
     padding: 14px;
     background-color: #fff;
     border: 1px solid #f5f5f5;
+    /*opacity: 0;*/
+    display: none;
     transition: all .3s;
-    opacity: 0;
 }
 
 .sidebar>div:first-child:hover .sidebar-hongbao {
-    opacity: 1;
-    right: 100px;
+    display: block;
+    /*opacity: 1;*/
 }
 
 .sidebar-hongbao img {
