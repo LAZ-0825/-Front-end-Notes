@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+    var n1 = 100;
+    var result = typeof n1;
+    console.log('n1 :' + n1);
+    console.log('n1 is :' + result);
+
+    // 数据类型转换
+    // 准备一个变量,赋值为字符串类型内容
+
+    // 转数值的三个方法：
+    console.log('转数值 的三个方法')
+    // 几个 s1 换着用，观察输出
+    // var s1 = '100 '
+    // var s1 = 'abc'
+    // var s1 = '100abc'
+    var s1 = '100.234'
+    console.log('s1 :' + s1)
+    console.log('s1 is :' + typeof s1)
+
+    // 使用 Number() 方法进行一下转换
+    console.log('1. 使用 Number() 方法')
+    var n2 = Number(s1)
+    console.log('n2 :' + n2)
+    console.log('n2 is :' + typeof n1)
+
+    // 使用 parseInt() 方法进行一下转换
+    // var s1 = '100abc' 时会有结果的改变（只有100）从左往右开始识别，直到不是数字，然后返回识别出的数字（第一位就不是数字的情况返回NaN）
+    console.log('2. 使用 parseInt() 方法')
+    var n3 = parseInt(s1)
+    console.log('n3 :' + n3)
+    console.log('n3 is :' + typeof n1)
+
+    // 使用 parseFloat() 方法进行一下转换
+    // var s1 = '100.234' 时会有结果的改变（只有100）从左往右开始识别，直到不是数字，然后返回识别出的数字（第一位就不是数字的情况返回NaN）
+    console.log('3. 使用 parseFloat() 方法')
+    var n3 = parseFloat(s1)
+    console.log('n3 :' + n3)
+    console.log('n3 is :' + typeof n1)
+
+    // parseInt() 方法 和 parseFloat() 方法 的区别：
+    //  parseInt() 方法只能识别到整数，parseFloat() 方法 可以识别到小数
+
+
+    // 转字符串 的两个方法：
+    console.log('转字符串 的两个方法')
+
+    var b1 = true
+    console.log('b1 :' + b1)
+    console.log('b1 is :' + typeof b1)
+
+    // 使用 String() 方法进行一下转换
+    console.log('1. 使用 String() 方法')
+    var s2 = String(b1)
+    console.log('s2 :' + s2)
+    console.log('s2 is :' + typeof s2)
+
+    // 使用 toString() 方法进行一下转换
+    console.log('2. 使用 toString() 方法')
+    var s3 = b1.toString()
+    console.log('s3 :' + s3)
+    console.log('s3 is :' + typeof s3)
+
+
+    // 转布尔 的一个方法：
+    console.log('转布尔 的一个方法')
+    // 在 js 中,只有五种内容会被转换成 false ,分别为:
+    // 0  NaN  空字符串('')  undefined  null
+    console.log('Boolean(0) is : ' + Boolean(0))
+    console.log('Boolean(NaN) is : ' + Boolean(NaN))
+    console.log('Boolean(空字符串) is : ' + Boolean(''))
+    console.log('Boolean(undefined) is : ' + Boolean(undefined))
+    console.log('Boolean(null) is : ' + Boolean(null))
+    console.log('Boolean(1234) is : ' + Boolean(1234))
+
+
+    console.log('比较符号')
+    // == : 只比较值是不是不相等，不考虑数据类型
+    console.log(10 != 10)
+    console.log(10 != '10')
+    // === : 只要值和数据类型任何一个不相等，就是true
+    console.log(10 !== 10)
+    console.log(10 !== '10')
+
+
+</script>
+
+<body>
+    <a href=" javascript:alert('123')">点我一下</a>
+    <button onclick="alert('Click a button.')">Please Click</button>
+</body>
+
+</html>
