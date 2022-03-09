@@ -23,8 +23,8 @@ console.log(s.length);
 console.log(s.toUpperCase());
 console.log(s.toLowerCase());
 // 获取指定索引以内的字符串
-console.log(s.substring(0,5));
-console.log(s.substring(0,5).toUpperCase());
+console.log(s.substring(0, 5));
+console.log(s.substring(0, 5).toUpperCase());
 
 // 将字符串分割到数组
 // 每个字符都分割
@@ -37,7 +37,7 @@ console.log(s1.split(', '))
 // 数组-保存多个值的变量
 console.log('Arrays - variables that hold multiple values')
 
-const numbers = new Array(1,2,3,4,5);
+const numbers = new Array(1, 2, 3, 4, 5);
 console.log(numbers);
 
 const fruits = ['apples', 'oranges', 'pears', 10, true, undefined];
@@ -75,14 +75,14 @@ console.log(fruits.indexOf('oranges')); // 看来只能查看第一次出现的�
 // 对象语法
 console.log('对象语法');
 const person = {
-    firstName: 'John ' ,
-    lastName: 'Doe ' ,
+    firstName: 'John ',
+    lastName: 'Doe ',
     age: 30,
-    hobbies: [ 'music' , 'movies ' , 'sports'],
+    hobbies: ['music', 'movies ', 'sports'],
     address: {
         street: '50 main st',
-        city: 'Boston ' ,
-        state:'MA'
+        city: 'Boston ',
+        state: 'MA'
     }
 }
 
@@ -94,7 +94,7 @@ console.log(person.address.city);
 
 // 从person中取出一些内容作为实际变量(ES6新特性)
 console.log('从person中取出一些内容作为实际变量(ES6新特性)')
-const{ firstName, lastName, address: { city }} = person;
+const { firstName, lastName, address: { city } } = person;
 console.log(firstName);
 console.log(city);
 
@@ -128,23 +128,23 @@ console.log(todos);
 console.log(todos[1].text);
 
 // 转换为JSON
-const todoJSON  = JSON.stringify(todos);
+const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
 
 
 // while循环
 let i = 0;
-while(i < 5) {
+while (i < 5) {
     console.log(`While Loop Number: ${i}`);
     i++;
 }
 
 // for循环
-for(let i = 0;i < 5;i++) {
+for (let i = 0; i < 5; i++) {
     console.log(`For Loop Number: ${i}`);
 }
 
-for(let todo of todos) {
+for (let todo of todos) {
     console.log(todo.text);
 }
 
@@ -153,28 +153,28 @@ for(let todo of todos) {
 // map: 从数组中创建新数组
 // filter: 根据条件创建新数组
 console.log('foreach循环：');
-todos.forEach(function(todo) {
+todos.forEach(function (todo) {
     console.log(todo.text);
 });
 
 console.log('map：');
-const todoText = todos.map(function(todo) {
+const todoText = todos.map(function (todo) {
     return todo.text;
 });
 console.log(todoText);
 
 console.log('fliter：');
-const todoCompleted = todos.filter(function(todo) {
+const todoCompleted = todos.filter(function (todo) {
     // 返回 isCompleted 是 true 的对象
     return todo.isCompleted === true;
 });
 console.log(todoCompleted);
 
 console.log('不同之间的配合'); // 强大的函数式编程
-const todoCompletedText = todos.filter(function(todo) {
+const todoCompletedText = todos.filter(function (todo) {
     // 返回 isCompleted 是 true 的对象
     return todo.isCompleted === true;
-}).map(function(todo) {
+}).map(function (todo) {
     return todo.text;
 });
 console.log(todoCompletedText);
@@ -196,18 +196,57 @@ todos.forEach((todo) => console.log(todo.text));
 
 // 面向对象编程
 
-// 构造函数
-function Person(firstName, lastName, dob) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    // 这里的 Date 对象是默认自带的
-    this.dob = new Date(dob);
+// 构造函数（结构体函数）
+// function Person(firstName, lastName, dob) {
+//     this.firstName = firstName;
+//     this.lastName = lastName;
+//     // 这里的 Date 对象是默认自带的
+//     this.dob = new Date(dob);
+//     // this.gerBirthyear = function() {
+//     //     return this.dob.getFullYear();
+//     // }
+//     // this.getFullName = function() {
+//     //     return `${this.firstName} ${this.lastName}`;
+//     // }
+// }
+// 
+// // 这个必须写在类外，并且写了这个就不用在构造函数中写方法了
+// // 访问这里写的方法跟在构造函数里写的方法一样，只是打印对象整体的时候有些区别
+// // （具体干啥的没看懂，但感觉属性和方法分离更清爽）
+// Person.prototype.gerBirthYear = function () {
+//     return this.dob.getFullYear();
+// }
+
+// Person.prototype.getFullName = function () {
+//     return `${this.firstName} ${this.lastName}`;
+// }
+
+// Class
+class Person {
+    constructor(firstName, lastName, dob) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        // 这里的 Date 对象是默认自带的
+        this.dob = new Date(dob);
+    }
+
+    gerBirthYear() {
+        return this.dob.getFullYear();
+    }
+
+    getFullName() {
+        return `${this.firstName} ${this.lastName}`;
+    }
 }
+
 // 实例化对象
-const person1  = new Person('John', 'Doe', '4-3-1980');
-const person2  = new Person('Mary', 'Smith', '3-6-1970');
+const person1 = new Person('John', 'Doe', '4-3-1980');
+const person2 = new Person('Mary', 'Smith', '3-6-1970');
 console.log(person1);
 // 对日期对象可以有很多操作，这里不一一演示了，具体可以查看文档
 console.log(person2.dob);
 console.log(person2.dob.getFullYear());
 
+console.log(person1.gerBirthYear());
+console.log(person1.getFullName());
+console.log(person1);
