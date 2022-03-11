@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    margin-top: 100px;
+}
+
+ul {
+    padding-left: 80px;
+}
+
+ul li {
+    float: left;
+    display: inline-block;
+    height: 150px;
+    line-height: 150px;
+    text-align: center;
+    margin-right: 80px;
+    /* background-color: pink; */
+}
+
+ul li a {
+    height: 26px;
+    font-size: 26px;
+    line-height: 26px;
+}
+
+.home {
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 35px;
+}
+
+.home a img {
+    height: 35px;
+}
