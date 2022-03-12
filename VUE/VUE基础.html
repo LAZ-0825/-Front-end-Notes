@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE基础</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<style>
+    .active {
+        border: 1px solid red;
+    }
+</style>
+
+<body>
+    {{ message }}
+    <div id="app" class="app">
+        {{ message }}
+        <span>{{ message }}</span>
+        <h2>{{ school.name }} {{school.mobile}}</h2>
+        <ul>
+            <li>{{ campus[0] }}</li>
+            <li>{{ campus[3] }}</li>
+        </ul>
+
+        v-text
+        <h2 v-text="school.name+'!!'"></h2>
+        <h2>{{ school.name + '123!' }}</h2>
+
+        v-html
+        <p v-html="content"></p>
+        <p v-text="content"></p>
+
+        v-on <br>
+        <input type="button" value="v-on指令" v-on:click="doIt">
+        <input type="button" value="v-on简写" @click="doIt">
+        <input type="button" value="双击事件" @dblclick="doIt">
+        <h2 @click="changeFood">{{ food }}</h2>
+        <div class="input-num">
+            <button @click="sub">-</button>
+            <span>{{ num }}</span>
+            <button @click="add">+</button>
+        </div>
+
+        <!-- 需要频繁切换的元素用 v-show ，反之用v-if。 -->
+        v-show
+        <!-- 本质是 display: none; -->
+        <!-- <p v-show="true">123</p> 不建议这样写，true和false不灵活 -->
+        <p v-show="isShow">123 v-show</p>
+        <p v-show="num>=3">123 v-show</p>
+        <button @click="changeisShow">changeisShow v-show</button><br>
+
+        v-if
+        <!-- 本质是删除元素 -->
+        <!-- <p v-if="true">123</p> 不建议这样写，true和false不灵活 -->
+        <p v-if="isShow">123 v-if</p>
+        <p v-if="num>=3">123 v-if</p>
+
+        v-bind <br>
+        <img v-bind:src="imgSrc" alt=""> <br>
+        <img :src="imgSrc" alt="" :title="imgTitle + '!!!'" :class="isActive?'active':''" @click="toggleActive"> <br>
+        <!-- 使用对象的方式来写（推荐），active是否生效取决于isActive的值，true生效，false不生效 -->
+        <img :src="imgSrc" alt="" :title="imgTitle + '!!!'" :class="{active:isActive}" @click="toggleActive"> <br>
+
+        <!-- 图片切换没写，具体看视频叭 -->
+        <!-- https://www.bilibili.com/video/BV12J411m7MG?p=14&spm_id_from=pageDriver -->
+
+        v-for <br>
+        <input type="button" value="添加数据" @click="addVegetables">
+        <input type="button" value="删除数据" @click="removeVegetables">
+        <ul>
+            <li v-for="(item,index) in campus">
+                {{ index + 1 }}黑马程序员校区：{{ item }}
+            </li>
+        </ul>
+        <h2 v-for="item in vegetables" v-bind:title="item.name">
+            {{item.name}}
+        </h2>
+
+        v-on补充 <br>
+        <input type="button" value="点击（查看控制台输出）" @click="doIt(666,'老铁')"> <br>
+        <input type="text" @keyup.enter="sayHi" placeholder="通过 keyup.enter 限制触发"> <br>
+
+        v-model <br>
+        <input type="text" v-model="message" @keyup.enter="getM">
+        <h2>{{ message }}</h2>
+
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: "#app",
+            // el: ".app",
+            data: {
+                message: " Hello Vue! ",
+                school: {
+                    name: "小明",
+                    mobile: "123456789"
+                },
+                campus: ["北京校区", "上海校区", "广州校区", "深圳校区"],
+                // content: "黑马程序员",
+                content: "<a href='http://www.bing.com'>必应</a>",
+                food: "西兰花炒蛋",
+                num: 3,
+                isShow: true,
+                imgSrc: "http://www.itheima.com/images/logo.png",
+                imgTitle: "黑马程序员",
+                isActive: false,
+                vegetables: [
+                    { name: "西兰花炒蛋" },
+                    { name: "蛋炒西兰花" }
+                ]
+            },
+            methods: {
+                doIt: function () {
+                    alert("做It");
+                },
+                changeFood: function () {
+                    // console.log(this.food);
+                    this.food += "好好吃！"
+                },
+                add: function () {
+                    if (this.num < 10)
+                        this.num++;
+                    else
+                        alert("别点啦！最大啦！")
+                },
+                sub: function () {
+                    if (this.num > 0)
+                        this.num--;
+                    else
+                        alert("别点啦！最小啦！")
+                },
+                changeisShow: function () {
+                    this.isShow = !this.isShow;
+                },
+                toggleActive: function () {
+                    this.isActive = !this.isActive;
+                },
+                addVegetables: function () {
+                    this.vegetables.push({ name: "花菜炒蛋" })
+                },
+                removeVegetables: function () {
+                    // 移除最左边的元素
+                    this.vegetables.shift();
+                },
+                doIt: function (p1, p2) {
+                    console.log("做It");
+                    console.log(p1);
+                    console.log(p2);
+                },
+                sayHi: function () {
+                    alert("吃了没");
+                },
+                getM: function () {
+                    alert(this.message)
+                }
+            }
+        })
+    </script>
+
+</body>
+
+
+
+</html>
