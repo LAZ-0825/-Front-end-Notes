@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE 制作轮播图</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<style>
+    .prev {
+        position: fixed;
+        left: 5px;
+        top: 5px;
+    }
+
+    .next {
+        position: fixed;
+        left: 20px;
+        top: 5px;
+    }
+
+    img {
+        margin-top: 20px;
+    }
+</style>
+
+<body>
+    <div id="mask">
+        <div class="center">
+            <img :src="imgArr[index]" alt="">
+            <!-- &gt;代表大于号，&lt;代表小于号 -->
+            <a href="javascript:void(0)" v-show="index!=0" @click="prev" class="prev">&lt;</a>
+            <a href="javascript:void(0)" v-show="index<imgArr.length-1" @click="next" class="next">&gt;</a>
+        </div>
+    </div>
+</body>
+
+<script>
+    var app = new Vue({
+        el: "#mask",
+        data: {
+            imgArr: [
+                "../images/1061cd8d46977b5291d481d0cd44105e.webp",
+                "../images/116fc43816b87192be4e67cf762e8da5.jpeg",
+                "../images/1c3e97686468231f3f78048d7f2b7fdc.webp",
+                "../images/2815a0a208be362cba673aae9a1f9c93.webp",
+                "../images/2fcf24e40ff09a254857ac8b4ace25b8.webp",
+                "../images/37576cef378ef2805c20b9ab2a9d6d3d.webp"
+            ],
+            index: 0
+        },
+        methods: {
+            prev: function () {
+                this.index--;
+            },
+            next: function () {
+                this.index++;
+            }
+        }
+    })
+</script>
+
+</html>

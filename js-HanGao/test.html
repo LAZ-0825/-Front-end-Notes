@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <!-- Include the ECharts file you just downloaded -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.js"></script>
+</head>
+
+
+<meta charset="utf-8" />
+<title>ECharts</title>
+<!-- Include the ECharts file you just downloaded -->
+<script src="echarts.js"></script>
+</head>
+
+<body>
+
+    <body>
+        <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+        <div id="main" style="width: 600px;height:400px;"></div>
+        <div id="main1" style="width: 600px;height:400px;"></div>
+        <script type="text/javascript">
+            // 基于准备好的dom，初始化echarts实例
+            var myChart = echarts.init(document.getElementById('main'));
+            var myChart1 = echarts.init(document.getElementById('main1')); // 第二个图表
+
+            // 指定图表的配置项和数据
+            // var option = {
+            //     title: {
+            //         text: 'ECharts 入门示例'
+            //     },
+            //     tooltip: {},
+            //     legend: {
+            //         data: ['销量']
+            //     },
+            //     xAxis: {
+            //         data: ['衬衫', '羊毛衫', '雪纺衫', '裤子', '高跟鞋', '袜子']
+            //     },
+            //     yAxis: {},
+            //     series: [
+            //         {
+            //             name: '销量',
+            //             type: 'bar',
+            //             data: [5, 20, 36, 10, 10, 20]
+            //         }
+            //     ]
+            // };
+
+            function func(x) {
+                x /= 10;
+                return Math.sin(x) * Math.cos(x * 2 + 1) * Math.sin(x * 3 + 2) * 50;
+            }
+            function generateData() {
+                let data = [];
+                for (let i = -200; i <= 200; i += 0.1) {
+                    data.push([i, func(i)]);
+                }
+                return data;
+            }
+            var option = {
+                animation: false,
+                grid: {
+                    top: 40,
+                    left: 50,
+                    right: 40,
+                    bottom: 50
+                },
+                xAxis: {
+                    name: 'x',
+                    minorTick: {
+                        show: true
+                    },
+                    minorSplitLine: {
+                        show: true
+                    }
+                },
+                yAxis: {
+                    name: 'y',
+                    min: -100,
+                    max: 100,
+                    minorTick: {
+                        show: true
+                    },
+                    minorSplitLine: {
+                        show: true
+                    }
+                },
+                dataZoom: [
+                    {
+                        show: true,
+                        type: 'inside',
+                        filterMode: 'none',
+                        xAxisIndex: [0],
+                        startValue: -20,
+                        endValue: 20
+                    },
+                    {
+                        show: true,
+                        type: 'inside',
+                        filterMode: 'none',
+                        yAxisIndex: [0],
+                        startValue: -20,
+                        endValue: 20
+                    }
+                ],
+                series: [
+                    {
+                        type: 'line',
+                        showSymbol: false,
+                        clip: true,
+                        data: generateData()
+                    }
+                ]
+            };
+
+            // 第二个图表
+            var option1 = {
+                xAxis: {
+                    type: 'category',
+                    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+                },
+                yAxis: {
+                    type: 'value'
+                },
+                series: [
+                    {
+                        data: [150, 230, 224, 218, 135, 147, 260],
+                        type: 'line'
+                    }
+                ]
+            }
+
+            // 使用刚指定的配置项和数据显示图表。
+            myChart.setOption(option);
+            myChart1.setOption(option1); // 第二个图表
+        </script>
+    </body>
+</body>
+
+</html>
